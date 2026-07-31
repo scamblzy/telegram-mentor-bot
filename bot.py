@@ -26,10 +26,11 @@ dp = Dispatcher()
 
 #connection with sql
 connection = ps.connect(
-     host='localhost',
-     user='postgres',
-     password='SQL2025Aitu@',
-     database='users'
+    host=os.getenv("PGHOST"),
+    user=os.getenv("PGUSER"),
+    password=os.getenv("PGPASSWORD"),
+    database=os.getenv("PGDATABASE"),
+    port=os.getenv("PGPORT"),
 )
 print("db connected successfully")
 cur = connection.cursor()
