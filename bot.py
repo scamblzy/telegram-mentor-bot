@@ -82,6 +82,8 @@ async def check_user(message: Message, state: FSMContext):
 
     user = cur.fetchone()
 
+    print(user)
+
     if user is None:
         await message.answer(
             "You are not registered\n"
